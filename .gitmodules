@@ -1,0 +1,6 @@
+[submodule ".config/zsh/pure"]
+	path = .config/zsh/pure
+	url = git@github.com:sindresorhus/pure.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = ssh://git@codeberg.org/vitaliichyhryn/config.nvim.git

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Terminal utilities
+alias \
+    c="clear" \
+    e="exit"
+
+# File utilities
+alias \
+    cp="cp -irv" \
+    mv="mv -iv" \
+    r="rm -Iv" \
+    rr="rm -Ifrv" \
+    md="mkdir -pv"
+
+# Directory listing
+if command -v eza > /dev/null; then
+    alias \
+        ls="eza --group-directories-first" \
+        l="ls -a" \
+        ll="ls -la"
+else
+    alias \
+        ls="ls --color=auto --group-directories-first -F" \
+        l="ls -A" \
+        ll="ls -hlA"
+fi
+
+# Text utilities
+alias \
+    diff="diff --color=auto" \
+    grep="grep --color=auto"
+
+# System utilities
+alias \
+    ka="killall" \
+
+# Network utilities
+alias \
+    ip="ip --color=auto"
+
+# Coding
+alias \
+    py="python" \
+    vi="nvim"
