@@ -42,4 +42,5 @@ alias \
 # Coding
 alias \
     py="python" \
-    vi="nvim"
+    vi="nvim" \
+    gct='git commit -am "$(date +"%Y-%m-%d %H:%M:%S")"'

@@ -1,5 +1,8 @@
 # Aliases
-source $ZDOTDIR/.aliases
+[[ -r $ZDOTDIR/.aliases ]] && . "$ZDOTDIR/.aliases"
+
+# Cache
+[[ -d $HOME/.cache ]] || mkdir -p "$HOME/.cache"
 
 # Completion
 fpath+=($ZDOTDIR/completions)
@@ -13,26 +16,24 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 HISTFILE=$HOME/.cache/.zsh_history
-HISTDUP=erase
 
-setopt appendhistory \
-	sharehistory \
+setopt sharehistory \
 	hist_ignore_space \
-	hist_ignore_dups \
 	hist_ignore_all_dups \
-	hist_save_no_dups \
-	hist_find_no_dups
+	hist_save_no_dups
 
 # Autocd
 setopt autocd
 
 # Plugins
-Plugins=(
-	"/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+plugins=(
 	"/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+	"/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+	"/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+	"/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 )
 
-for plugin in ${Plugins[@]}
+for plugin in ${plugins[@]}
 do
 	[[ -e $plugin ]] && source $plugin
 done

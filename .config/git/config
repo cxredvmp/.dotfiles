@@ -4,8 +4,5 @@
 [include]
     path = identity
 
-[includeif "gitdir:~/Code/edu/"]
-    path = edu
-
 [includeif "gitdir:~/Projects/edu/"]
     path = edu
