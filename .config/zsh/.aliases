@@ -5,7 +5,6 @@ alias \
     c="clear" \
     e="exit"
 
-# File utilities
 alias \
     cp="cp -irv" \
     mv="mv -iv" \
@@ -13,7 +12,7 @@ alias \
     rr="rm -Ifrv" \
     md="mkdir -pv"
 
-# Directory listing
+# Use eza instead of ls if available
 if command -v eza > /dev/null; then
     alias \
         ls="eza --group-directories-first" \
@@ -26,21 +25,17 @@ else
         ll="ls -hlA"
 fi
 
-# Text utilities
 alias \
     diff="diff --color=auto" \
     grep="grep --color=auto"
 
-# System utilities
 alias \
     ka="killall" \
-
-# Network utilities
-alias \
     ip="ip --color=auto"
 
-# Coding
 alias \
     py="python" \
-    vi="nvim" \
-    gct='git commit -am "$(date +"%Y-%m-%d %H:%M:%S")"'
+    vi="nvim"
+
+# Stage and commit with timestamp
+alias gct='git commit -am "$(date +"%Y-%m-%d %H:%M:%S")"'
